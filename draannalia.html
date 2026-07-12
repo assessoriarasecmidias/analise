@@ -415,105 +415,19 @@
     margin-right:6px;
   }
 
-  /* SEÇÃO 07: PROPOSIÇÃO */
-  #proposicao{background:var(--cream);}
-  
-  .proposicao-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:24px;
-    margin-top:40px;
-  }
-  
-  .servico-card{
-    background:#fff;
-    padding:28px 20px;
-    border-radius:4px;
-    border:1px solid var(--border-gray);
-    text-align:center;
-  }
-  
-  .servico-numero{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:40px;
-    height:40px;
-    background:var(--gold);
-    color:var(--navy);
-    border-radius:50%;
-    font-weight:700;
-    margin-bottom:12px;
-  }
-  
-  .servico-card h3{margin-bottom:12px;}
-  
-  .servico-descricao{
-    font-size:0.95rem;
-    color:var(--light-gray);
-    margin-bottom:16px;
-  }
-  
-  .servico-inclui{
-    text-align:left;
-    list-style:none;
-    margin:16px 0;
-    font-size:0.9rem;
-  }
-  
-  .servico-inclui li{
-    padding:6px 0;
-    color:var(--dark-gray);
-  }
-  
-  .servico-inclui li::before{
-    content:"✓ ";
-    color:var(--gold);
-    font-weight:700;
-    margin-right:8px;
-  }
-  
-  .servico-valor{
-    font-weight:700;
-    color:var(--navy);
-    margin:16px 0 8px;
-    font-size:1.05rem;
-  }
-  
-  .servico-prazo{
-    font-size:0.85rem;
-    color:var(--light-gray);
-  }
-
   /* FOOTER */
   footer{
     background:var(--navy);
     color:var(--cream);
     text-align:center;
-    padding:40px 0;
+    padding:30px 0;
   }
   
   footer p{
-    color:rgba(242,237,230,0.8);
+    color:var(--cream);
     font-size:0.95rem;
-    margin-bottom:16px;
+    margin:0;
   }
-  
-  .footer-links{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    margin-top:20px;
-    font-size:0.9rem;
-  }
-  
-  .footer-links a{
-    color:var(--gold);
-    text-decoration:none;
-    transition:color 0.3s;
-  }
-  
-  .footer-links a:hover{color:var(--cream);}
 
   /* RESPONSIVE */
   @media (max-width:768px){
@@ -840,85 +754,13 @@
   </div>
 </section>
 
-<!-- SEÇÃO 07: PROPOSIÇÃO -->
-<section id="proposicao">
-  <div class="container">
-    <h2 style="text-align:center;margin-bottom:10px;">A gente faz a análise. Você decide se quer agir.</h2>
-    <p style="text-align:center;color:var(--light-gray);margin-bottom:40px;">Oferecemos 3 serviços integrados. Você pode começar por um ou fazer tudo junto:</p>
-    
-    <div class="proposicao-grid">
-      
-      <div class="servico-card">
-        <div class="servico-numero">1</div>
-        <h3>Diagnóstico Comercial</h3>
-        <p class="servico-descricao">Análise completa da sua presença digital</p>
-        
-        <ul class="servico-inclui">
-          <li>Auditoria Google Business</li>
-          <li>Análise de concorrentes</li>
-          <li>Buscas onde você não aparece</li>
-          <li>Relatório com 15+ recomendações</li>
-        </ul>
-        
-        <p class="servico-valor">R$ [DEFINIR]</p>
-        <p class="servico-prazo">Entrega em 5 dias</p>
-      </div>
-      
-      <div class="servico-card">
-        <div class="servico-numero">2</div>
-        <h3>Landing Page Premium</h3>
-        <p class="servico-descricao">Site próprio otimizado para conversão</p>
-        
-        <ul class="servico-inclui">
-          <li>Design profissional (navy + gold)</li>
-          <li>18 serviços listados com descrições</li>
-          <li>Galeria de antes/depois</li>
-          <li>Preços ou "consulte-nos"</li>
-          <li>Integração Google Business</li>
-          <li>Rastreamento GA4 + Meta Pixel</li>
-        </ul>
-        
-        <p class="servico-valor">R$ [DEFINIR]</p>
-        <p class="servico-prazo">Entrega em 2-3 semanas</p>
-      </div>
-      
-      <div class="servico-card">
-        <div class="servico-numero">3</div>
-        <h3>Campanhas Meta Ads</h3>
-        <p class="servico-descricao">Anúncios estratégicos no Facebook/Instagram</p>
-        
-        <ul class="servico-inclui">
-          <li>Segmentação por serviço (implante, botox, harmonização)</li>
-          <li>Copywriting e design de anúncios</li>
-          <li>Gestão de campanhas (30 dias mínimo)</li>
-          <li>Rastreamento de leads e conversão</li>
-        </ul>
-        
-        <p class="servico-valor">R$ [DEFINIR] + orçamento de anúncios</p>
-        <p class="servico-prazo">Lançamento em 1 semana</p>
-      </div>
-      
-    </div>
-    
-    <div style="text-align:center;margin-top:40px;">
-      <a href="https://wa.me/55[INSERIR WHATSAPP]" class="btn btn-secondary">Agendar conversa com especialista</a>
-      <p class="autoridade-subtext" style="margin-top:14px;">15 minutos para entender sua situação e montar a melhor estratégia.</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">
-    <p><strong>Trabalhamos com 15+ profissionais de saúde em Minas Gerais.</strong></p>
-    <p>Já geramos +R$ [INSERIR VALOR]k em faturamento adicional para clientes.</p>
-    <p>Seu próximo sucesso pode ser o seu.</p>
-    
-    <div class="footer-links">
-      <a href="https://wa.me/55[INSERIR WHATSAPP]">WhatsApp</a>
-      <a href="https://instagram.com/[INSERIR INSTAGRAM]">Instagram</a>
-      <a href="mailto:[INSERIR EMAIL]">E-mail</a>
-    </div>
+  <div class="container" style="display:flex;align-items:center;justify-content:center;gap:12px;">
+    <img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/oficial.png" alt="Assessoria Raséc Mídias" style="height:40px;width:auto;">
+    <p style="margin:0;"><strong>Assessoria Raséc Mídias</strong></p>
   </div>
 </footer>
 
