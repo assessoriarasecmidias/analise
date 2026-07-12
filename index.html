@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análise Exclusiva - Dra. Annália Siqueira</title>
+<style>
+  :root{
+    --navy:#0c1a26;
+    --gold:#bf9d6a;
+    --cream:#f2ede6;
+    --dark-gray:#3a3a38;
+    --light-gray:#999;
+    --border-gray:#eee6d9;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:var(--dark-gray);background:var(--cream);line-height:1.6;font-size:16px;}
+  
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+  
+  img{max-width:100%;display:block;height:auto;}
+  
+  h1,h2,h3{color:var(--navy);font-weight:600;line-height:1.2;}
+  h1{font-size:clamp(1.8rem, 5vw, 2.8rem);margin-bottom:16px;}
+  h2{font-size:clamp(1.5rem, 4vw, 2.2rem);margin-bottom:20px;}
+  h3{font-size:1.15rem;margin-bottom:14px;}
+  
+  p{margin-bottom:14px;color:var(--dark-gray);line-height:1.7;}
+  
+  a{color:var(--navy);text-decoration:none;}
+  
+  section{padding:60px 0;}
+  
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 32px;
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:600;
+    border:none;
+    cursor:pointer;
+    font-size:0.95rem;
+    transition:all 0.3s ease;
+    text-decoration:none;
+    border-radius:4px;
+  }
+  
+  .btn:hover{background:#d8c199;transform:translateY(-2px);}
+  
+  .btn-secondary{
+    background:var(--navy);
+    color:var(--cream);
+  }
+  
+  .btn-secondary:hover{background:#132738;}
+
+  /* HERO */
+  #hero{
+    background:linear-gradient(135deg, var(--navy) 0%, #132738 100%);
+    color:var(--cream);
+    padding:80px 0;
+    text-align:center;
+  }
+  
+  #hero h1{color:var(--cream);font-size:clamp(2rem, 6vw, 3.2rem);}
+  
+  #hero p{color:rgba(242,237,230,0.9);font-size:clamp(1rem, 3vw, 1.15rem);max-width:700px;margin:0 auto 32px;}
+  
+  /* SEÇÃO 02: OS 3 PILARES */
+  #pilares{background:#fff;}
+  
+  .pilares-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:30px;
+    margin-top:40px;
+  }
+  
+  .pilar{
+    background:var(--cream);
+    padding:30px;
+    border-left:4px solid var(--gold);
+    border-radius:4px;
+  }
+  
+  .pilar h3{color:var(--navy);margin-bottom:12px;}
+  
+  .pilar-problema{
+    font-weight:600;
+    color:var(--navy);
+    margin:16px 0 12px;
+  }
+  
+  .pilar-list{
+    list-style:none;
+    margin:12px 0;
+    font-size:0.95rem;
+  }
+  
+  .pilar-list li{
+    padding:6px 0;
+    color:var(--dark-gray);
+  }
+  
+  .pilar-list li::before{
+    content:"❌ ";
+    margin-right:8px;
+    color:#d32f2f;
+  }
+  
+  .pilar-impacto{
+    background:rgba(191,157,106,0.1);
+    padding:14px;
+    margin:16px 0;
+    border-radius:4px;
+    font-size:0.95rem;
+    color:var(--dark-gray);
+  }
+  
+  .pilar-numero{
+    font-weight:700;
+    color:var(--gold);
+    font-size:1.3rem;
+    margin-top:12px;
+  }
+
+  /* SEÇÃO 03: AS BUSCAS */
+  #buscas{background:var(--cream);}
+  
+  .buscas-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+    margin-top:40px;
+  }
+  
+  .busca-card{
+    background:#fff;
+    padding:20px;
+    border-radius:4px;
+    border:1px solid var(--border-gray);
+  }
+  
+  .busca-card img{
+    width:100%;
+    height:auto;
+    margin:16px 0;
+    border-radius:4px;
+  }
+  
+  .busca-label{
+    font-weight:600;
+    color:var(--navy);
+    margin-bottom:8px;
+    font-size:0.95rem;
+  }
+  
+  .busca-status{
+    display:inline-block;
+    background:#ffebee;
+    color:#d32f2f;
+    padding:8px 14px;
+    border-radius:4px;
+    font-weight:600;
+    margin-bottom:12px;
+    font-size:0.9rem;
+  }
+  
+  .busca-copy{
+    color:var(--light-gray);
+    font-size:0.95rem;
+    font-style:italic;
+  }
+  
+  .buscas-fechamento{
+    background:rgba(191,157,106,0.12);
+    padding:20px;
+    border-radius:4px;
+    margin-top:30px;
+    text-align:center;
+  }
+  
+  .buscas-fechamento p{color:var(--navy);font-weight:500;}
+
+  /* SEÇÃO 04: CONCORRENTES */
+  #concorrentes{background:#fff;}
+  
+  .concorrentes-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-top:40px;
+  }
+  
+  .concorrente-card{
+    background:var(--cream);
+    padding:20px;
+    border-radius:4px;
+    border:1px solid var(--border-gray);
+  }
+  
+  .concorrente-card img{
+    width:100%;
+    height:auto;
+    margin:14px 0;
+    border-radius:4px;
+  }
+  
+  .concorrente-nome{
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:8px;
+    font-size:1.05rem;
+  }
+  
+  .concorrente-status{
+    font-size:0.85rem;
+    color:var(--light-gray);
+    margin-bottom:12px;
+  }
+  
+  .concorrente-info{
+    font-size:0.95rem;
+    color:var(--dark-gray);
+    line-height:1.6;
+    margin-bottom:12px;
+  }
+  
+  .concorrente-copy{
+    background:rgba(211,47,47,0.1);
+    padding:12px;
+    border-left:3px solid #d32f2f;
+    margin-top:12px;
+    font-weight:500;
+    color:#d32f2f;
+    font-size:0.9rem;
+  }
+  
+  .concorrentes-impacto{
+    background:rgba(211,47,47,0.08);
+    padding:20px;
+    border-radius:4px;
+    margin-top:30px;
+    font-size:0.95rem;
+  }
+  
+  .concorrentes-impacto p{color:var(--dark-gray);margin-bottom:12px;}
+  
+  .concorrentes-impacto strong{color:var(--navy);}
+
+  /* SEÇÃO 05: A PERGUNTA */
+  #pergunta{
+    background:linear-gradient(135deg, var(--navy) 0%, #132738 100%);
+    color:var(--cream);
+    text-align:center;
+    padding:60px 0;
+  }
+  
+  #pergunta h2{color:var(--cream);font-size:clamp(1.8rem, 5vw, 2.6rem);}
+  
+  #pergunta .subtitulo{
+    font-size:1.05rem;
+    color:rgba(242,237,230,0.85);
+    margin-bottom:32px;
+  }
+  
+  .pergunta-content{
+    text-align:left;
+    max-width:700px;
+    margin:0 auto;
+  }
+  
+  .pergunta-content p{
+    color:rgba(242,237,230,0.9);
+    line-height:1.8;
+    margin-bottom:16px;
+    font-size:0.98rem;
+  }
+  
+  .pergunta-critica{
+    background:rgba(191,157,106,0.15);
+    padding:20px;
+    border-left:4px solid var(--gold);
+    margin:24px 0;
+    border-radius:4px;
+  }
+  
+  .pergunta-critica p{color:var(--cream);font-weight:500;}
+  
+  .pergunta-timeline{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+    margin:28px 0;
+  }
+  
+  .timeline-item{
+    background:rgba(242,237,230,0.08);
+    padding:16px;
+    border-radius:4px;
+    border-left:3px solid var(--gold);
+  }
+  
+  .timeline-item strong{color:var(--gold);}
+  
+  .timeline-item p{font-size:0.95rem;}
+  
+  .pergunta-finalizacao{
+    margin-top:32px;
+    font-size:0.98rem;
+  }
+  
+  .pergunta-finalizacao p{color:rgba(242,237,230,0.95);}
+  
+  .pergunta-cta{
+    margin-top:32px;
+  }
+
+  /* SEÇÃO 06: AUTORIDADE */
+  #autoridade{
+    background:#fff;
+  }
+  
+  .autoridade-card{
+    background:linear-gradient(135deg, var(--cream) 0%, rgba(191,157,106,0.1) 100%);
+    padding:40px 20px;
+    border-radius:8px;
+    text-align:center;
+    border:1px solid var(--border-gray);
+  }
+  
+  .autoridade-avatar{
+    width:80px;
+    height:80px;
+    background:var(--gold);
+    border-radius:50%;
+    margin:0 auto 16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2rem;
+  }
+  
+  .autoridade-nome{
+    font-size:1.25rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  
+  .autoridade-titulo{
+    color:var(--light-gray);
+    font-size:0.95rem;
+    margin-bottom:20px;
+  }
+  
+  .autoridade-credenciais{
+    list-style:none;
+    margin:20px 0;
+    text-align:left;
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .autoridade-credenciais li{
+    padding:8px 0;
+    color:var(--dark-gray);
+    font-size:0.95rem;
+  }
+  
+  .autoridade-credenciais li::before{
+    content:"✓ ";
+    color:var(--gold);
+    font-weight:700;
+    margin-right:8px;
+  }
+  
+  .autoridade-texto{
+    text-align:left;
+    max-width:600px;
+    margin:24px auto;
+    font-size:0.98rem;
+    color:var(--dark-gray);
+    line-height:1.8;
+  }
+  
+  .autoridade-cta{
+    margin-top:28px;
+  }
+  
+  .autoridade-subtext{
+    color:var(--light-gray);
+    font-size:0.9rem;
+    margin-top:14px;
+  }
+  
+  .trust-indicators{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:20px;
+    font-size:0.9rem;
+    color:var(--dark-gray);
+  }
+  
+  .trust-indicators span::before{
+    content:"✓ ";
+    color:var(--gold);
+    font-weight:700;
+    margin-right:6px;
+  }
+
+  /* SEÇÃO 07: PROPOSIÇÃO */
+  #proposicao{background:var(--cream);}
+  
+  .proposicao-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+    margin-top:40px;
+  }
+  
+  .servico-card{
+    background:#fff;
+    padding:28px 20px;
+    border-radius:4px;
+    border:1px solid var(--border-gray);
+    text-align:center;
+  }
+  
+  .servico-numero{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    background:var(--gold);
+    color:var(--navy);
+    border-radius:50%;
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  
+  .servico-card h3{margin-bottom:12px;}
+  
+  .servico-descricao{
+    font-size:0.95rem;
+    color:var(--light-gray);
+    margin-bottom:16px;
+  }
+  
+  .servico-inclui{
+    text-align:left;
+    list-style:none;
+    margin:16px 0;
+    font-size:0.9rem;
+  }
+  
+  .servico-inclui li{
+    padding:6px 0;
+    color:var(--dark-gray);
+  }
+  
+  .servico-inclui li::before{
+    content:"✓ ";
+    color:var(--gold);
+    font-weight:700;
+    margin-right:8px;
+  }
+  
+  .servico-valor{
+    font-weight:700;
+    color:var(--navy);
+    margin:16px 0 8px;
+    font-size:1.05rem;
+  }
+  
+  .servico-prazo{
+    font-size:0.85rem;
+    color:var(--light-gray);
+  }
+
+  /* FOOTER */
+  footer{
+    background:var(--navy);
+    color:var(--cream);
+    text-align:center;
+    padding:40px 0;
+  }
+  
+  footer p{
+    color:rgba(242,237,230,0.8);
+    font-size:0.95rem;
+    margin-bottom:16px;
+  }
+  
+  .footer-links{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:20px;
+    font-size:0.9rem;
+  }
+  
+  .footer-links a{
+    color:var(--gold);
+    text-decoration:none;
+    transition:color 0.3s;
+  }
+  
+  .footer-links a:hover{color:var(--cream);}
+
+  /* RESPONSIVE */
+  @media (max-width:768px){
+    section{padding:40px 0;}
+    h1{font-size:1.6rem;}
+    h2{font-size:1.35rem;}
+    .pilares-grid, .buscas-grid, .concorrentes-grid, .proposicao-grid{gap:16px;}
+    .pilar, .busca-card, .concorrente-card, .servico-card{padding:20px;}
+    #hero{padding:50px 0;}
+    .pergunta-timeline{grid-template-columns:1fr;}
+    .autoridade-card{padding:30px 16px;}
+  }
+  
+  @media (max-width:600px){
+    .container{padding:0 16px;}
+    section{padding:30px 0;}
+    h1{font-size:1.4rem;}
+    h2{font-size:1.15rem;}
+    p{font-size:0.95rem;}
+    .btn{padding:12px 24px;font-size:0.9rem;}
+    #hero{padding:40px 0;}
+    .pilar, .busca-card, .concorrente-card, .servico-card{padding:16px;}
+    .pergunta-critica, .pilar-impacto{padding:14px;}
+    .footer-links{flex-wrap:wrap;gap:14px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <h1>Análise exclusiva para você, Dra. Annália</h1>
+    <p>Uma análise completa mostra exatamente onde você está perdendo pacientes que buscam implante, botox e harmonização em São João del Rei.</p>
+    <a href="#pilares" class="btn">Ver minha auditoria</a>
+  </div>
+</section>
+
+<!-- SEÇÃO 02: OS 3 PILARES -->
+<section id="pilares">
+  <div class="container">
+    <h2>3 coisas que estão custando pacientes</h2>
+    <p style="text-align:center;color:var(--light-gray);margin-bottom:40px;">Esses são os pontos críticos que separam você de seus concorrentes</p>
+    
+    <div class="pilares-grid">
+      
+      <!-- PILAR 1 -->
+      <div class="pilar">
+        <h3>1. Você não tem um site que mostra seus serviços</h3>
+        <p class="pilar-problema">Clientes não conseguem ver detalhes dos serviços numa página profissional</p>
+        
+        <p style="font-weight:600;margin-top:14px;">O que falta:</p>
+        <ul class="pilar-list">
+          <li>Descrição dos 18 serviços (implante, botox, rinomodelação, etc)</li>
+          <li>Depoimentos dos pacientes organizados</li>
+          <li>Fotos do consultório (recepção, cadeira, ambiente)</li>
+          <li>Preços ou faixas de preço</li>
+        </ul>
+        
+        <p style="margin-top:14px;"><strong>Seu site agora:</strong> Linktree → links soltos, sem profissionalismo, sem rastreamento</p>
+        
+        <div class="pilar-impacto">
+          <strong>O que o cliente pensa:</strong> "Tem avaliação boa, mas onde vejo os detalhes? Quanto custa? Como é o consultório?"
+        </div>
+        
+        <p class="pilar-numero">Um site próprio traz 3-5x mais pacientes que um agregador</p>
+      </div>
+      
+      <!-- PILAR 2 -->
+      <div class="pilar">
+        <h3>2. Você não tem fotos de resultado dos pacientes</h3>
+        <p class="pilar-problema">Harmonização facial exige foto de resultado para converter</p>
+        
+        <p style="margin-top:14px;"><strong>Por que isso mata sua conversão:</strong></p>
+        <ul class="pilar-list">
+          <li>Botox, preenchimento, rinomodelação: clientes querem ver transformação</li>
+          <li>75 avaliações 5.0, mas zero galeria de casos = credibilidade desperdiçada</li>
+          <li>Concorrentes que estão anunciando no Meta mostram antes/depois</li>
+        </ul>
+        
+        <div class="pilar-impacto">
+          <strong>O que o cliente pensa:</strong> "Tem avaliação boa, mas cadê as fotos de resultado? Será que realmente funciona?"
+        </div>
+        
+        <p class="pilar-numero">Galeria antes/depois pode aumentar conversão em até 40%</p>
+      </div>
+      
+      <!-- PILAR 3 -->
+      <div class="pilar">
+        <h3>3. Você não responde comentários</h3>
+        <p class="pilar-problema">75 avaliações 5.0 e zero respostas do proprietário</p>
+        
+        <p style="margin-top:14px;"><strong>O que está acontecendo:</strong></p>
+        <ul class="pilar-list">
+          <li>Clientes deixam feedback positivo e você fica muda</li>
+          <li>Google interpreta como falta de engajamento e você não aparece entre os primeiros</li>
+          <li>Reduz confiança: "ela tem avaliações boas, mas não se importa em responder"</li>
+          <li>Concorrentes que respondem aparecem mais ativos e confiáveis</li>
+        </ul>
+        
+        <div class="pilar-impacto">
+          <strong>O que o cliente pensa:</strong> "Deixei um feedback legal, mas ela nem respondeu. Será que ativa?"
+        </div>
+        
+        <p class="pilar-numero">Responder em 48h aumenta engajamento em +30% e melhora ranking</p>
+      </div>
+      
+    </div>
+    
+    <div style="background:rgba(191,157,106,0.1);padding:20px;border-radius:4px;margin-top:30px;text-align:center;">
+      <p style="color:var(--navy);font-weight:500;">Esses 3 pilares são o que separam você de seus 9 concorrentes que estão anunciando. Eles têm site, mostram resultados e respondem. Você tem credibilidade, mas não está usando.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 03: AS BUSCAS -->
+<section id="buscas">
+  <div class="container">
+    <h2>Aonde seus clientes estão procurando</h2>
+    <p style="text-align:center;color:var(--light-gray);margin-bottom:40px;">(e não achando você)</p>
+    
+    <p style="text-align:center;margin-bottom:30px;">Fizemos 3 buscas específicas no Google. Veja onde você não aparece:</p>
+    
+    <div class="buscas-grid">
+      
+      <div class="busca-card">
+        <div class="busca-label">Busca 1: Implante dentário</div>
+        <img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/dentista%20para%20fazer%20implante%20em%20sao%20joao%20del%20rei.png" alt="Busca: dentista implante são joão del rei">
+        <div class="busca-status">❌ Você não aparece</div>
+        <p class="busca-copy">"Quem procura implante em São João del Rei, não te encontra."</p>
+      </div>
+      
+      <div class="busca-card">
+        <div class="busca-label">Busca 2: Harmonização Facial</div>
+        <img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/n%C3%A3o%20aparece%20botox%20em%20sao%20joao%20del%20rei.png" alt="Busca: botox são joão del rei">
+        <div class="busca-status">❌ Você não aparece</div>
+        <p class="busca-copy">"Quem quer botox, passa direto por você."</p>
+      </div>
+      
+      <div class="busca-card">
+        <div class="busca-label">Busca 3: Dentista local</div>
+        <img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/dentista%20sjdr%20S%C3%A3o%20Jo%C3%A3o%20del%20Rei%2C%20MG.png" alt="Busca: dentista sjdr">
+        <div class="busca-status">❌ Você não aparece</div>
+        <p class="busca-copy">"Buscas simples, resultado simples: você fica de fora."</p>
+      </div>
+      
+    </div>
+    
+    <div class="buscas-fechamento">
+      <p>Esses clientes estão procurando você. Estão digitando exatamente os serviços que você oferece. Mas quando digitam, quem aparece é o concorrente. E aí? Eles ligam para o concorrente, não para você.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 04: CONCORRENTES -->
+<section id="concorrentes">
+  <div class="container">
+    <h2>Enquanto isso, 9 dentistas estão anunciando</h2>
+    <p style="text-align:center;color:var(--light-gray);margin-bottom:40px;">Seus concorrentes estão pagando para aparecer. Você não está.</p>
+    
+    <div class="concorrentes-grid">
+      
+      <div class="concorrente-card">
+        <div class="concorrente-nome">Oral Sin São João del-Rei</div>
+        <div class="concorrente-status">✓ Ativo (Patrocinado) | Com Vídeo</div>
+        <img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/oral%20sin.png" alt="Anúncio Oral Sin">
+        <div class="concorrente-info">
+          <strong>Copy do anúncio deles:</strong><br>
+          "Você se identifica com esse caso? Cada sorriso tem uma história, e um tratamento ideal também..."
+        </div>
+        <div class="concorrente-info">
+          <strong>Estratégia:</strong> Storytelling + Vídeo + Personalização
+        </div>
+        <div class="concorrente-copy">Eles estão contando história de paciente. Você está invisível.</div>
+      </div>
+      
+      <div class="concorrente-card">
+        <div class="concorrente-nome">Sorria Odontologia</div>
+        <div class="concorrente-status">✓ Ativo (Patrocinado) | Com Vídeo</div>
+        <img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/sorria%20odontologia.png" alt="Anúncio Sorria Odontologia">
+        <div class="concorrente-info">
+          <strong>Copy do anúncio deles:</strong><br>
+          "Você colocou uma dentadura achando que ela iria resolver o problema. Mas a vela aquele momento..."
+        </div>
+        <div class="concorrente-info">
+          <strong>Estratégia:</strong> Identificação + Antes/Depois + Empatia
+        </div>
+        <div class="concorrente-copy">Eles mostram transformação. Você tem 75 avaliações, mas zero fotos de resultado.</div>
+      </div>
+      
+      <div class="concorrente-card">
+        <div class="concorrente-nome">OdontoClinic - São João Del Rey</div>
+        <div class="concorrente-status">✓ Ativo (Patrocinado) | Com Vídeo</div>
+        <img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/odontoclinic.png" alt="Anúncio OdontoClinic">
+        <div class="concorrente-info">
+          <strong>Copy do anúncio deles:</strong><br>
+          "A CORRERIA DO DIA A DIA ESTÁ DEIXANDO O SEU SORRISO POR PEDIR? A gente facilita cada etapa..."
+        </div>
+        <div class="concorrente-info">
+          <strong>Estratégia:</strong> Dor do cliente + Diferencial claro + Presença física
+        </div>
+        <div class="concorrente-copy">Eles estão mostrando consultório. Você não está anunciando.</div>
+      </div>
+      
+    </div>
+    
+    <div class="concorrentes-impacto">
+      <p><strong>O mais importante:</strong></p>
+      <p>Cada anúncio desses está aparecendo para pessoas que digitam "dentista são joão del rei", "implante", "botox".</p>
+      <p>Essas são pessoas que VOCÊ poderia estar atendendo.</p>
+      <p>Mas em vez disso, eles estão aparecendo para seus pacientes em potencial.</p>
+      <p style="margin-top:16px;"><strong>O mais louco?</strong> Você TEM tudo que eles estão tentando vender: 75 avaliações, experiência de 10+ anos, harmonização facial como diferencial. Mas eles estão visíveis e você invisível. Porque eles estão anunciando.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 05: A PERGUNTA -->
+<section id="pergunta">
+  <div class="container">
+    <h2>Se você quisesse captar mais pacientes, começaria hoje?</h2>
+    <p class="subtitulo">Porque a resposta afeta tudo o que vem a seguir.</p>
+    
+    <div class="pergunta-content">
+      <p>Você tem 75 avaliações 5 estrelas. Clientes amam você. Recomendavam você.</p>
+      
+      <p>Mas eles te acham como?</p>
+      <ul style="list-style:none;margin-left:0;">
+        <li>❌ Digitando "dentista implante são joão del rei"? Não, você não aparece.</li>
+        <li>❌ Vendo anúncio seu no Facebook? Não, você não está anunciando.</li>
+        <li>❌ Encontrando seu site profissional? Não, você tem um Linktree.</li>
+        <li>❌ Vendo fotos de antes/depois? Não, você não tem galeria.</li>
+      </ul>
+      
+      <p><strong>Então como seus clientes te acham?</strong></p>
+      <p>Por indicação. Boca a boca. Acaso.</p>
+      
+      <p>Mas seus concorrentes? Eles estão PAGANDO para aparecer na frente. Estão MOSTRANDO resultados. Estão RESPONDENDO comentários. Estão ATIVOS.</p>
+      
+      <p>E enquanto eles crescem, você fica no mesmo lugar.</p>
+      
+      <div class="pergunta-critica">
+        <p>A questão não é "você quer captar mais pacientes?"</p>
+        <p>A questão é: <strong>"Quanto tempo você vai esperar seus concorrentes capturarem todos?"</strong></p>
+      </div>
+      
+      <p>Porque cada mês que passa:</p>
+      <ul style="list-style:none;margin-left:0;">
+        <li>✗ Mais 9 anúncios aparecem</li>
+        <li>✗ Mais clientes vão para eles</li>
+        <li>✗ Mais difícil fica voltar a aparecer</li>
+      </ul>
+      
+      <p><strong>Mas e se você começasse agora?</strong></p>
+      
+      <div class="pergunta-timeline">
+        <div class="timeline-item">
+          <strong>Mês 1:</strong> Site próprio + Google Business otimizado + Respostas em comentários + Primeiros pacientes chegando
+        </div>
+        <div class="timeline-item">
+          <strong>Mês 2:</strong> Você aparecendo nas 3 buscas principais + Avaliações crescendo + Agenda começando a ficar aperta
+        </div>
+        <div class="timeline-item">
+          <strong>Mês 3:</strong> Você dominando "implante são joão del rei" + Concorrentes percebendo que você acordou + Pacientes escolhendo você
+        </div>
+      </div>
+      
+      <div class="pergunta-finalizacao">
+        <p><strong>A pergunta é:</strong> você quer isso?</p>
+        <p>Porque se quer, tem que começar agora.</p>
+        <p style="margin-top:16px;">Não é sobre ser o melhor dentista. Você já é (75 avaliações comprovam).</p>
+        <p>É sobre ser <strong>visível</strong> para quem está procurando você.</p>
+        <p style="margin-top:16px;font-weight:600;font-size:1.05rem;">Quer começar?</p>
+      </div>
+    </div>
+    
+    <div class="pergunta-cta">
+      <a href="#autoridade" class="btn">Agendar conversa agora</a>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 06: AUTORIDADE -->
+<section id="autoridade">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:10px;">Quem está por trás dessa análise</h2>
+    <p style="text-align:center;color:var(--light-gray);margin-bottom:40px;">Não é teoria. É experiência.</p>
+    
+    <div class="autoridade-card">
+      <div class="autoridade-avatar">👤</div>
+      <div class="autoridade-nome">Guilherme</div>
+      <div class="autoridade-titulo">Especialista em Tráfego Pago e Gestão de Campanhas</div>
+      
+      <ul class="autoridade-credenciais">
+        <li>Mais de 200k em anúncios gerenciados</li>
+        <li>15+ profissionais de saúde em Minas Gerais</li>
+        <li>Expertise em Meta Ads e Google Ads</li>
+        <li>Especializado em dentistas e harmonização facial</li>
+      </ul>
+      
+      <div class="autoridade-texto">
+        <p>Eu trabalho com profissionais de saúde em Minas Gerais. Dentistas, nutricionistas, harmonização facial... Já gerenciei mais de 200k em anúncios pagos.</p>
+        
+        <p>Essa análise que você acabou de ver? Não é genérica. A gente pesquisou VOCÊ especificamente. Seus concorrentes. Suas buscas. Seu Google Business.</p>
+        
+        <p>Porque sei como funciona, vejo o padrão: profissional bom, credibilidade alta, mas invisível. Enquanto concorrentes mediocres estão capturando pacientes.</p>
+        
+        <p><strong>A boa notícia?</strong> Isso é reversível. E rápido.</p>
+        
+        <p>Você não precisa ser expert em Meta Ads ou SEO. A gente já faz isso. O que você precisa é de uma conversa de 15 minutos para entender como podemos ajudar.</p>
+      </div>
+      
+      <div class="autoridade-cta">
+        <a href="https://wa.me/55[INSERIR WHATSAPP]" class="btn">Conversar com Guilherme</a>
+      </div>
+      
+      <p class="autoridade-subtext">15 minutos. Sem compromisso. Sem pressão. Só análise honesta.</p>
+      
+      <div class="trust-indicators">
+        <span>Mais de 200k em campanhas gerenciadas</span>
+        <span>15+ profissionais de saúde atendidos</span>
+        <span>Disponível para conversa hoje</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 07: PROPOSIÇÃO -->
+<section id="proposicao">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:10px;">A gente faz a análise. Você decide se quer agir.</h2>
+    <p style="text-align:center;color:var(--light-gray);margin-bottom:40px;">Oferecemos 3 serviços integrados. Você pode começar por um ou fazer tudo junto:</p>
+    
+    <div class="proposicao-grid">
+      
+      <div class="servico-card">
+        <div class="servico-numero">1</div>
+        <h3>Diagnóstico Comercial</h3>
+        <p class="servico-descricao">Análise completa da sua presença digital</p>
+        
+        <ul class="servico-inclui">
+          <li>Auditoria Google Business</li>
+          <li>Análise de concorrentes</li>
+          <li>Buscas onde você não aparece</li>
+          <li>Relatório com 15+ recomendações</li>
+        </ul>
+        
+        <p class="servico-valor">R$ [DEFINIR]</p>
+        <p class="servico-prazo">Entrega em 5 dias</p>
+      </div>
+      
+      <div class="servico-card">
+        <div class="servico-numero">2</div>
+        <h3>Landing Page Premium</h3>
+        <p class="servico-descricao">Site próprio otimizado para conversão</p>
+        
+        <ul class="servico-inclui">
+          <li>Design profissional (navy + gold)</li>
+          <li>18 serviços listados com descrições</li>
+          <li>Galeria de antes/depois</li>
+          <li>Preços ou "consulte-nos"</li>
+          <li>Integração Google Business</li>
+          <li>Rastreamento GA4 + Meta Pixel</li>
+        </ul>
+        
+        <p class="servico-valor">R$ [DEFINIR]</p>
+        <p class="servico-prazo">Entrega em 2-3 semanas</p>
+      </div>
+      
+      <div class="servico-card">
+        <div class="servico-numero">3</div>
+        <h3>Campanhas Meta Ads</h3>
+        <p class="servico-descricao">Anúncios estratégicos no Facebook/Instagram</p>
+        
+        <ul class="servico-inclui">
+          <li>Segmentação por serviço (implante, botox, harmonização)</li>
+          <li>Copywriting e design de anúncios</li>
+          <li>Gestão de campanhas (30 dias mínimo)</li>
+          <li>Rastreamento de leads e conversão</li>
+        </ul>
+        
+        <p class="servico-valor">R$ [DEFINIR] + orçamento de anúncios</p>
+        <p class="servico-prazo">Lançamento em 1 semana</p>
+      </div>
+      
+    </div>
+    
+    <div style="text-align:center;margin-top:40px;">
+      <a href="https://wa.me/55[INSERIR WHATSAPP]" class="btn btn-secondary">Agendar conversa com especialista</a>
+      <p class="autoridade-subtext" style="margin-top:14px;">15 minutos para entender sua situação e montar a melhor estratégia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p><strong>Trabalhamos com 15+ profissionais de saúde em Minas Gerais.</strong></p>
+    <p>Já geramos +R$ [INSERIR VALOR]k em faturamento adicional para clientes.</p>
+    <p>Seu próximo sucesso pode ser o seu.</p>
+    
+    <div class="footer-links">
+      <a href="https://wa.me/55[INSERIR WHATSAPP]">WhatsApp</a>
+      <a href="https://instagram.com/[INSERIR INSTAGRAM]">Instagram</a>
+      <a href="mailto:[INSERIR EMAIL]">E-mail</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
