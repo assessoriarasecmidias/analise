@@ -23,9 +23,9 @@
   img{max-width:100%;display:block;height:auto;}
   
   h1,h2,h3{color:var(--navy);font-weight:600;line-height:1.2;}
-  h1{font-size:clamp(1.8rem, 5vw, 2.8rem);margin-bottom:16px;}
-  h2{font-size:clamp(1.5rem, 4vw, 2.2rem);margin-bottom:20px;}
-  h3{font-size:1.15rem;margin-bottom:14px;}
+  h1{font-size:clamp(2.2rem, 6.5vw, 3.6rem);margin-bottom:16px;}
+  h2{font-size:clamp(1.8rem, 5vw, 2.8rem);margin-bottom:20px;}
+  h3{font-size:1.2rem;margin-bottom:14px;}
   
   p{margin-bottom:14px;color:var(--dark-gray);line-height:1.7;}
   
@@ -66,9 +66,9 @@
     text-align:center;
   }
   
-  #hero h1{color:var(--cream);font-size:clamp(2rem, 6vw, 3.2rem);}
+  #hero h1{color:var(--cream);font-size:clamp(2.4rem, 7vw, 4rem);}
   
-  #hero p{color:rgba(242,237,230,0.9);font-size:clamp(1rem, 3vw, 1.15rem);max-width:700px;margin:0 auto 32px;}
+  #hero p{color:rgba(242,237,230,0.9);font-size:clamp(1.1rem, 3.5vw, 1.3rem);max-width:700px;margin:0 auto 32px;}
   
   /* SEÇÃO 02: OS 3 PILARES */
   #pilares{background:#fff;}
@@ -260,10 +260,10 @@
     padding:60px 0;
   }
   
-  #pergunta h2{color:var(--cream);font-size:clamp(1.8rem, 5vw, 2.6rem);}
+  #pergunta h2{color:var(--cream);font-size:clamp(2rem, 5.5vw, 3.2rem);}
   
   #pergunta .subtitulo{
-    font-size:1.05rem;
+    font-size:1.2rem;
     color:rgba(242,237,230,0.85);
     margin-bottom:32px;
   }
@@ -334,15 +334,22 @@
   }
   
   .autoridade-avatar{
-    width:80px;
-    height:80px;
-    background:var(--gold);
+    width:100px;
+    height:100px;
+    background:transparent;
     border-radius:50%;
     margin:0 auto 16px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:2rem;
+    overflow:hidden;
+  }
+  
+  .autoridade-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
   }
   
   .autoridade-nome{
@@ -711,7 +718,7 @@
     <p style="text-align:center;color:var(--light-gray);margin-bottom:40px;">Não é teoria. É experiência.</p>
     
     <div class="autoridade-card">
-      <div class="autoridade-avatar" style="background:transparent;"><img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/SaveClip.App_539940244_18527241943020594_3380085283608632635_n.jpg" alt="Guilherme" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+      <div class="autoridade-avatar"><img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/SaveClip.App_539940244_18527241943020594_3380085283608632635_n.jpg" alt="Guilherme"></div>
       <div class="autoridade-nome">Guilherme</div>
       <div class="autoridade-titulo">Especialista em Tráfego Pago e Gestão de Campanhas</div>
       
