@@ -207,6 +207,15 @@
       text-align: center;
       padding: 1rem;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      background-image: url('https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/fotodeperfilBeatriz%20D%C3%B6ring%20-%20Fotografia.jpg');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .image-placeholder::after {
+      content: '';
+      display: none;
     }
 
     .cta-primary {
@@ -276,13 +285,21 @@
     .diferencial-icon {
       width: 60px;
       height: 60px;
-      background: var(--accent-gold);
-      border-radius: 8px;
+      background: transparent;
+      border: 2px solid var(--accent-beige);
+      border-radius: 4px;
       margin: 0 auto 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
+    }
+
+    .diferencial-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--accent-beige);
+      stroke-width: 1.5;
+      fill: none;
     }
 
     .diferencial-item h3 {
@@ -414,6 +431,10 @@
       font-size: 0.9rem;
       text-align: center;
       padding: 1rem;
+      background-image: url('https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/fotodequemsoueu.png');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
     }
 
     .sobre-text h2 {
@@ -502,11 +523,137 @@
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       overflow: hidden;
+      background-image: url('https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/petfriendly.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .portfolio-item::after {
+      content: '';
+      display: none;
     }
 
     .portfolio-item:hover {
       transform: scale(1.02);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    /* LOCALIZAÇÃO & CONTATO */
+    .localizacao {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .localizacao-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: stretch;
+      margin-top: 2rem;
+    }
+
+    .mapa-container {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .mapa-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      display: block;
+    }
+
+    .localizacao-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 0;
+    }
+
+    .localizacao-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .localizacao-info p {
+      color: var(--text-medium);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .info-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      font-size: 1.5rem;
+      min-width: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .info-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent-beige);
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--text-dark);
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    .info-item p {
+      color: var(--text-medium);
+      font-size: 0.9rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .info-item a {
+      color: var(--accent-beige);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .info-item a:hover {
+      color: var(--text-dark);
+    }
+
+    @media (max-width: 768px) {
+      .localizacao-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .mapa-container iframe {
+        min-height: 300px;
+      }
+
+      .localizacao-info {
+        padding: 0;
+      }
     }
 
     /* CTA FINAL */
@@ -653,7 +800,7 @@
         <button class="cta-primary" onclick="document.querySelector('.cta-buttons').scrollIntoView({behavior: 'smooth'})">Reserve sua sessão</button>
       </div>
       <div class="hero-image">
-        <div class="image-placeholder">Foto circular da Beatriz segurando câmera</div>
+        <div class="image-placeholder"></div>
       </div>
     </div>
   </section>
@@ -664,17 +811,38 @@
   <section class="diferenciais">
     <div class="diferenciais-content">
       <div class="diferencial-item">
-        <div class="diferencial-icon">📸</div>
+        <div class="diferencial-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 12l2 2 4-4"/>
+          </svg>
+        </div>
         <h3>Abordagem Sensível</h3>
         <p>Observo e acolho cada detalhe com atenção. Meu objetivo é capturar emoções reais e genuínas, não poses.</p>
       </div>
       <div class="diferencial-item">
-        <div class="diferencial-icon">☀️</div>
+        <div class="diferencial-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="1.5"/>
+            <line x1="12" y1="2" x2="12" y2="6"/>
+            <line x1="12" y1="18" x2="12" y2="22"/>
+            <line x1="4.22" y1="4.22" x2="7.07" y2="7.07"/>
+            <line x1="16.93" y1="16.93" x2="19.78" y2="19.78"/>
+            <line x1="2" y1="12" x2="6" y2="12"/>
+            <line x1="18" y1="12" x2="22" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="7.07" y2="16.93"/>
+            <line x1="16.93" y1="7.07" x2="19.78" y2="4.22"/>
+          </svg>
+        </div>
         <h3>Luz Natural</h3>
         <p>Estúdio pet-friendly com luz natural como elemento principal. Um espaço calmo onde você e sua família se reconhecem nas imagens.</p>
       </div>
       <div class="diferencial-item">
-        <div class="diferencial-icon">💕</div>
+        <div class="diferencial-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
         <h3>Conexão</h3>
         <p>Para mim, fotografar é preservar histórias únicas cheias de amor. Cada clique guarda um momento que nunca mais será igual.</p>
       </div>
@@ -750,7 +918,7 @@
   <!-- SOBRE MIM -->
   <section class="sobre" id="sobre">
     <div class="sobre-content">
-      <div class="sobre-image">Foto da Beatriz com câmera em fundo neutro</div>
+      <div class="sobre-image"></div>
       <div class="sobre-text">
         <h2>Pode me chamar de Bia</h2>
         <p>Sou fotógrafa especializada em registrar as histórias mais importantes das pessoas. Desde 2016, trabalho para preservar esses momentos únicos que nunca mais se repetem.</p>
@@ -783,15 +951,76 @@
     <p class="section-subtitle">Um pouco dos momentos que já guardei</p>
     
     <div class="portfolio-grid">
-      <div class="portfolio-item">Foto 1 do portfólio</div>
-      <div class="portfolio-item">Foto 2 do portfólio</div>
-      <div class="portfolio-item">Foto 3 do portfólio</div>
-      <div class="portfolio-item">Foto 4 do portfólio</div>
-      <div class="portfolio-item">Foto 5 do portfólio</div>
-      <div class="portfolio-item">Foto 6 do portfólio</div>
-      <div class="portfolio-item">Foto 7 do portfólio</div>
-      <div class="portfolio-item">Foto 8 do portfólio</div>
-      <div class="portfolio-item">Foto 9 do portfólio</div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+      <div class="portfolio-item"></div>
+    </div>
+  </section>
+
+  <div class="spacing"></div>
+
+  <!-- LOCALIZAÇÃO & CONTATO -->
+  <section class="localizacao">
+    <div class="container">
+      <h2 class="section-title">Onde Você Nos Encontra</h2>
+      <p class="section-subtitle">Estúdio de luz natural em Timbó, Santa Catarina</p>
+      
+      <div class="localizacao-content">
+        <div class="mapa-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.614886361142!2d-49.254638299999996!3d-26.8203885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94defdc930531dad%3A0xb35fddf27eb83824!2sBeatriz%20D%C3%B6ring%20-%20Fotografia!5e0!3m2!1spt-BR!2sbr!4v1784145141372!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        
+        <div class="localizacao-info">
+          <h3>Estúdio Beatriz Döring</h3>
+          <p>Venha conhecer nosso espaço de luz natural, pet-friendly e acolhedor. Agendamos sessões com antecedência para garantir sua melhor experiência.</p>
+          
+          <div class="info-items">
+            <div class="info-item">
+              <span class="info-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Endereço</strong>
+                <p>Timbó, Santa Catarina<br>Consulte endereço completo ao agendar</p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <span class="info-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </span>
+              <div>
+                <strong>WhatsApp</strong>
+                <p><a href="https://wa.me/5547991234567" target="_blank">Enviar mensagem</a></p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <span class="info-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Horários</strong>
+                <p>Agendamentos sob demanda<br>Consulte disponibilidade</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -828,10 +1057,13 @@
     // Smooth scroll behavior for modern browsers
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       });
     });
