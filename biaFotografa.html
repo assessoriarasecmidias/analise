@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise: Como Atrair Mais Clientes Fotografando</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0d0f1a;
+            --navy-light: #1a1d2e;
+            --gold: #C9A84C;
+            --gold-light: #e0b860;
+            --light: #f8f9fa;
+            --light-gray: #f3f4f6;
+            --medium-gray: #e5e7eb;
+            --text: #1a1a1a;
+            --text-light: #6b7280;
+            --text-lighter: #9ca3af;
+            --accent: #8b5cf6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, #fafbfc 0%, #f3f4f6 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #d1d5db;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        @media (min-width: 768px) {
+            header h1 {
+                font-size: 52px;
+            }
+            header p {
+                font-size: 20px;
+            }
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+            line-height: 1.2;
+            letter-spacing: -0.3px;
+        }
+
+        section h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 32px;
+            background: var(--gold);
+            margin-right: 15px;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        @media (min-width: 768px) {
+            section h2 {
+                font-size: 36px;
+            }
+        }
+
+        /* SEÇÃO 1: ERROS */
+        .erro-card {
+            background: white;
+            border-left: 5px solid var(--gold);
+            border-radius: 8px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .erro-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .erro-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            border-left-color: var(--gold-light);
+        }
+
+        .erro-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .erro-card h3 {
+            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        .erro-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* SEÇÃO 2 E 3: ANÁLISES */
+        .analise-box {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            margin-bottom: 25px;
+            border-top: 4px solid var(--gold);
+        }
+
+        .analise-box p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #f9f4ec 0%, #f3f4f6 100%);
+            border: 2px dashed var(--medium-gray);
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 8px;
+            color: var(--text-lighter);
+            font-size: 14px;
+            margin: 25px 0;
+            transition: all 0.3s ease;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .screenshot-placeholder:hover {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, #faf8f5 0%, #f5f6f8 100%);
+        }
+
+        .screenshot-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .insight-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .insight-item {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .insight-item p {
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .insight-item.negative {
+            background: #fef2f2;
+            border-left-color: #dc2626;
+            border: 2px solid #fca5a5;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+        }
+
+        .insight-item.negative p {
+            color: #7f1d1d;
+        }
+
+        .insight-item.negative strong {
+            color: #dc2626;
+        }
+
+        .insight-item.positive {
+            background: #f0fdf4;
+            border-left-color: #16a34a;
+        }
+
+        .insight-item.positive p {
+            color: #15803d;
+        }
+
+        /* SEÇÃO 4: PROMESSA */
+        .promise-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .promise-item:last-child {
+            border-bottom: none;
+        }
+
+        .promise-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
+        }
+
+        .promise-text h3 {
+            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .promise-text p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .promise-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border-top: 4px solid var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .promise-result {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.08) 0%, rgba(201, 168, 76, 0.03) 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            margin-top: 20px;
+        }
+
+        .promise-result p {
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: white;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 20px;
+            max-width: 900px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-section h2::before {
+            background: var(--gold);
+        }
+
+        .cta-section p {
+            color: #d1d5db;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy);
+            padding: 18px 50px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .cta-button {
+                width: 100%;
+                padding: 16px 30px;
+                font-size: 15px;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 13px;
+            color: #6b7280;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        /* DIVISOR COM GRADIENTE */
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+            margin: 50px 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 480px) {
+            section {
+                padding: 40px 16px;
+            }
+
+            section h2 {
+                font-size: 24px;
+            }
+
+            section h2::before {
+                width: 3px;
+                height: 24px;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            .erro-card {
+                padding: 20px;
+                margin-bottom: 16px;
+            }
+
+            .promise-box {
+                padding: 25px;
+            }
+
+            .cta-section {
+                padding: 50px 20px;
+                margin: 40px 0;
+                border-radius: 12px;
+            }
+
+            .promise-item {
+                gap: 16px;
+                margin-bottom: 24px;
+                padding-bottom: 24px;
+            }
+
+            .promise-number {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* LINKS */
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--gold-light);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Análise personalizada para Beatriz Döring</h1>
+    <p>Espero que você goste e aproveite a análise!</p>
+</header>
+
+<div class="container">
+
+    <!-- SEÇÃO 1: ERROS -->
+    <section>
+        <h2>Os 5 erros que estão te custando clientes</h2>
+        <p class="section-subtitle">Descobrimos que a maioria dos fotógrafos deixa dinheiro na mesa todos os dias por causa desses pontos. Veja se você se identifica:</p>
+
+        <div class="erro-card">
+            <h3>1. Ficha do Google não otimizada</h3>
+            <p>Sua ficha do Google é um recurso gratuito e poderoso. Se está incompleta ou desatualizada, você simplesmente não aparece nas buscas. Resultado: clientes procuram e não te encontram.</p>
+        </div>
+
+        <div class="erro-card">
+            <h3>2. Sem site de apresentação</h3>
+            <p>Instagram é seu portfólio, mas não é uma página de vendas. Um site próprio funciona 24 horas vendendo seu trabalho enquanto você dorme. Sem ele, você perde credibilidade e a chance de aparecer no Google.</p>
+        </div>
+
+        <div class="erro-card">
+            <h3>3. Não usa anúncios no Google</h3>
+            <p>É onde as pessoas buscam fotógrafo. Se você não está lá, seus concorrentes estão. Enquanto isso, você perde clientes já com intenção de compra.</p>
+        </div>
+
+        <div class="erro-card">
+            <h3>4. Não investe em anúncios no Facebook e Instagram</h3>
+            <p>É onde você mostra seu trabalho para mais pessoas e constrói reconhecimento de marca. Sem isso, só quem já conhece você te encontra.</p>
+        </div>
+
+        <div class="erro-card">
+            <h3>5. Atendimento comercial fraco</h3>
+            <p>Mesmo com cliente chegando, se o atendimento não converter, você perde a venda. Resposta lenta, falta de informação clara sobre preço e processo travam o negócio.</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SEÇÃO 2: ANÁLISE GOOGLE -->
+    <section>
+        <h2>O que encontramos na sua ficha do Google</h2>
+        <p class="section-subtitle">Analisamos sua ficha e identificamos os pontos que estão impedindo você de aparecer mais nos resultados de busca:</p>
+
+        <div class="analise-box">
+            <div class="screenshot-placeholder">
+                <img src="fotografia_em_timbó.png" alt="Busca por Fotógrafa em Timbó">
+            </div>
+
+            <div class="insight-item negative">
+                <p><strong>Você não aparece quando procuram por você:</strong> Pesquisamos por "Fotógrafa em Timbó" e você não aparece entre os primeiros resultados. Clientes estão procurando especificamente fotógrafos na sua cidade e não te encontram.</p>
+            </div>
+
+            <div class="insight-item negative">
+                <p><strong>Buscas genéricas também não funcionam:</strong> Quando buscamos por "Estúdio de fotografia em Timbó", sua visibilidade continua desaparecendo. Isso significa que você está perdendo oportunidades todos os dias com pessoas que querem fotógrafos locais.</p>
+                <div class="screenshot-placeholder" style="margin-top: 15px; margin-bottom: 0;">
+                    <img src="pesquisa_estudio_de_fotografia_em_timbo.png" alt="Busca por Estúdio de Fotografia em Timbó">
+                </div>
+            </div>
+
+            <div class="insight-item negative">
+                <p><strong>Descrição sem CTA:</strong> Sua descrição é clara sobre os tipos de fotografia, mas falta um chamado para ação direto. Algo como "Visite nosso portfólio e faça seu agendamento" faria clientes saberem exatamente o que fazer depois.</p>
+            </div>
+
+            <div class="insight-item negative">
+                <p><strong>Link do site não está funcional:</strong> Sua ficha não direciona para seu site ou Canva (beatrizdoringfoto.my.canva.site). Clientes chegam na sua ficha mas não conseguem encontrar um lugar para ver mais trabalho ou agendar.</p>
+                <div class="screenshot-placeholder" style="margin-top: 15px; margin-bottom: 0;">
+                    <img src="botão_de_site_que_não_tem_na_ficha_dela.png" alt="Botão de Site que falta">
+                </div>
+            </div>
+
+            <div class="insight-item negative">
+                <p><strong>WhatsApp sem botão funcional:</strong> Você tem o número, mas não está integrado como um botão de WhatsApp que funciona direto. O cliente tem que copiar, abrir WhatsApp, colar. Isso faz muita gente desistir antes de entrar em contato.</p>
+            </div>
+
+            <div class="insight-item negative">
+                <p><strong>Serviços preenchidos:</strong> Você não preencheu "Fotografia de casamento", "Fotografia de gestante", "Fotografia de produto" etc. Google usa esses dados para classificar você melhor. Sem eles, você aparece menos em buscas específicas.</p>
+                <div class="screenshot-placeholder" style="margin-top: 15px; margin-bottom: 0;">
+                    <img src="forma_de_apresentar_os_serviços.png" alt="Forma de apresentar serviços no Google">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SEÇÃO 3: ANÁLISE META -->
+    <section>
+        <h2>Oportunidades que você está deixando passar no Facebook e Instagram</h2>
+        <p class="section-subtitle">Olhamos para sua presença no Instagram e Facebook e vimos como você poderia estar alcançando muito mais pessoas:</p>
+
+        <div class="analise-box">
+            <div class="screenshot-placeholder">
+                <img src="anúncio_do_cardoso_fotografia.png" alt="Anúncio do Cardoso Fotografias">
+            </div>
+
+            <div class="insight-item negative">
+                <p><strong>Nenhum anúncio ativo no momento:</strong> Você não está rodando campanhas de anúncios no Facebook ou Instagram. Enquanto isso, seus concorrentes estão capturando a atenção de pessoas que ainda não conhecem seu trabalho.</p>
+            </div>
+
+            <div class="insight-item positive">
+                <p><strong>Concorrência fraca é uma oportunidade ouro:</strong> Analisamos os 5 principais fotógrafos que aparecem no Google de Timbó. Apenas Diego Mengardes tem 1 anúncio ativo. Isso significa que o mercado está pouco saturado em relação a anúncios. Para você, isso é perfeito: você entra agora com baixa concorrência e custo de anúncio menor.</p>
+            </div>
+
+            <div class="insight-item negative">
+                <p><strong>Ameaça do Cardoso Fotografias:</strong> Descobrimos que o Cardoso Fotografias (de Indaial, bem pertinho) está anunciando para a região de Timbó. Eles estão pagando para aparecer para clientes que são seus, na sua cidade. Enquanto você não faz nada, eles estão capturando essa demanda.</p>
+            </div>
+
+            <div class="insight-item negative">
+                <p><strong>Impacto na verdade:</strong> Cada cliente que Cardoso Fotografias leva de você é um cliente que poderia estar fotografando com você. Considerando o valor de uma sessão de fotografia, você está deixando sair centenas por semana.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SEÇÃO 4: PROMESSA -->
+    <section>
+        <h2>Como a gente pode ajudar</h2>
+        <p class="section-subtitle">A gente não faz promessas vazias. A gente trabalha em 4 frentes:</p>
+
+        <div class="promise-box">
+            <div class="promise-item">
+                <div class="promise-number">1</div>
+                <div class="promise-text">
+                    <h3>Otimizamos sua ficha do Google</h3>
+                    <p>Fotos, descrição, atributos, CTA e WhatsApp integrado 100% ajustados. Recurso gratuito que funciona para você aparecer mais nos resultados de busca e facilitar o contato direto.</p>
+                </div>
+            </div>
+
+            <div class="promise-item">
+                <div class="promise-number">2</div>
+                <div class="promise-text">
+                    <h3>Criamos um site que vende 24h</h3>
+                    <p>Um site que apresenta seu trabalho e funciona 24 horas vendendo seus serviços enquanto você dorme. Seu portfólio trabalhando para você, gerando leads e agendamentos automáticos.</p>
+                </div>
+            </div>
+
+            <div class="promise-item">
+                <div class="promise-number">3</div>
+                <div class="promise-text">
+                    <h3>Anúncios no Google que funcionam</h3>
+                    <p>Criamos anúncios estratégicos que fazem você aparecer quando as pessoas buscam pelo serviço de fotografia em Timbó. Clientes com intenção de compra, prontos para agendar.</p>
+                </div>
+            </div>
+
+            <div class="promise-item">
+                <div class="promise-number">4</div>
+                <div class="promise-text">
+                    <h3>Anúncios estratégicos no Meta</h3>
+                    <p>Criamos campanhas no Facebook e Instagram que deixam você reconhecida na região, alcançam pessoas que ainda não conhecem seu trabalho e trazem mais orçamentos. Enquanto Cardoso Fotografias investe, você está do seu lado capturando essas mesmas pessoas.</p>
+                </div>
+            </div>
+
+            <div class="promise-result">
+                <p>Resultado: mais pessoas conhecem seu trabalho, você aparece nos primeiros resultados quando alguém busca fotógrafo em Timbó, e mais clientes chegam até você com intenção de compra.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SEÇÃO 5: CTA -->
+    <section class="cta-section">
+        <h2>Próximo passo</h2>
+        <p>Quer entender exatamente como a gente pode colocar isso em prática no seu negócio?</p>
+        <p>A gente oferece uma conversa gratuita de 30 minutos onde a gente detalha tudo isso e você entende como funciona.</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>Assessoria Raséc Mídias | Captação de Clientes por Meio de Anúncios</p>
+</footer>
+
+</body>
+</html>
