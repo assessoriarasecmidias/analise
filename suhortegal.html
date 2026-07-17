@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise: Como Atrair Mais Clientes Fotografando</title>
+    <title>Su Hortegal - Análise de Presença Digital</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -23,7 +23,7 @@
             --text: #1a1a1a;
             --text-light: #6b7280;
             --text-lighter: #9ca3af;
-            --accent: #8b5cf6;
+            --white: #ffffff;
         }
 
         html {
@@ -32,24 +32,24 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text);
-            background: linear-gradient(135deg, #fafbfc 0%, #f3f4f6 100%);
+            background: var(--white);
             min-height: 100vh;
         }
 
         .container {
-            max-width: 100%;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        /* HEADER */
+        /* ============ HERO ============ */
         header {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             color: white;
-            padding: 60px 20px;
+            padding: 100px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--gold);
+            border-bottom: 5px solid var(--gold);
             position: relative;
             overflow: hidden;
         }
@@ -61,7 +61,7 @@
             right: -10%;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             z-index: 0;
         }
@@ -73,7 +73,7 @@
             left: -5%;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
             border-radius: 50%;
             z-index: 0;
         }
@@ -85,42 +85,63 @@
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
             line-height: 1.1;
             letter-spacing: -0.5px;
+            animation: slideDown 0.8s ease-out;
         }
 
-        header p {
+        header .hero-subtitle {
             font-size: 18px;
             color: #d1d5db;
             font-weight: 400;
-            letter-spacing: 0.3px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+
+        header .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: fadeIn 0.8s ease-out 0.4s both;
         }
 
         @media (min-width: 768px) {
             header h1 {
-                font-size: 52px;
+                font-size: 56px;
             }
-            header p {
+            header .hero-subtitle {
                 font-size: 20px;
             }
         }
 
-        /* SEÇÕES */
+        /* ============ SEÇÕES ============ */
         section {
-            padding: 60px 20px;
+            padding: 70px 20px;
             margin: 0 auto;
             max-width: 900px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        section.intro-section {
+            padding: 60px 20px 50px;
         }
 
         section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
             color: var(--navy);
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             line-height: 1.2;
             letter-spacing: -0.3px;
         }
@@ -128,213 +149,275 @@
         section h2::before {
             content: '';
             display: inline-block;
-            width: 4px;
-            height: 32px;
+            width: 5px;
+            height: 36px;
             background: var(--gold);
             margin-right: 15px;
             border-radius: 2px;
         }
 
-        .section-subtitle {
-            font-size: 15px;
+        .section-intro-text {
+            font-size: 18px;
             color: var(--text-light);
-            margin-bottom: 40px;
+            line-height: 1.8;
+            margin-bottom: 50px;
             font-weight: 400;
-            line-height: 1.7;
         }
 
-        @media (min-width: 768px) {
-            section h2 {
-                font-size: 36px;
-            }
+        /* ============ ELOGIO GENUÍNO ============ */
+        .praise-box {
+            background: linear-gradient(135deg, #f0f8f4 0%, #f8f4f0 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 5px solid var(--gold);
+            margin-bottom: 40px;
         }
 
-        /* SEÇÃO 1: ERROS */
-        .erro-card {
+        .praise-box p {
+            font-size: 17px;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .praise-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .praise-highlight {
+            font-size: 18px;
+            color: var(--navy);
+            font-weight: 700;
+            display: block;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(201, 168, 76, 0.3);
+        }
+
+        /* ============ CARDS DE OPORTUNIDADES ============ */
+        .opportunity {
             background: white;
             border-left: 5px solid var(--gold);
-            border-radius: 8px;
-            padding: 28px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
 
-        .erro-card::before {
+        .opportunity::before {
             content: '';
             position: absolute;
             top: 0;
             right: 0;
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
             border-radius: 50%;
             z-index: 0;
         }
 
-        .erro-card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        .opportunity:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             transform: translateY(-4px);
-            border-left-color: var(--gold-light);
         }
 
-        .erro-card > * {
+        .opportunity > * {
             position: relative;
             z-index: 1;
         }
 
-        .erro-card h3 {
-            font-size: 18px;
+        .opp-label {
+            font-size: 12px;
+            font-weight: 700;
             color: var(--navy);
-            margin-bottom: 10px;
-            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .opp-title {
+            font-size: 22px;
+            color: var(--navy);
+            margin-bottom: 16px;
+            font-weight: 700;
             font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.3px;
         }
 
-        .erro-card p {
-            font-size: 15px;
+        .opp-description {
+            font-size: 16px;
             color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* SEÇÃO 2 E 3: ANÁLISES */
-        .analise-box {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            margin-bottom: 25px;
-            border-top: 4px solid var(--gold);
-        }
-
-        .analise-box p {
-            color: var(--text-light);
-            font-size: 15px;
             line-height: 1.8;
             margin-bottom: 20px;
         }
 
-        .screenshot-placeholder {
-            background: linear-gradient(135deg, #f9f4ec 0%, #f3f4f6 100%);
-            border: 2px dashed var(--medium-gray);
-            padding: 50px 20px;
-            text-align: center;
+        /* ============ INSIGHT BOXES ============ */
+        .insight {
+            background: var(--light-gray);
+            padding: 24px;
             border-radius: 8px;
-            color: var(--text-lighter);
+            margin: 20px 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .insight-title {
             font-size: 14px;
-            margin: 25px 0;
-            transition: all 0.3s ease;
-        }
-
-        .screenshot-placeholder:hover {
-            border-color: var(--gold);
-            background: linear-gradient(135deg, #faf8f5 0%, #f5f6f8 100%);
-        }
-
-        .screenshot-placeholder img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .insight-label {
-            font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--navy);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 12px;
+            display: block;
         }
 
-        /* SEÇÃO 4: PROMESSA */
-        .promise-item {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 32px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid var(--medium-gray);
-        }
-
-        .promise-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .promise-number {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-            color: var(--navy);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-            font-size: 20px;
-            font-family: 'Montserrat', sans-serif;
-            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
-        }
-
-        .promise-text h3 {
-            font-size: 18px;
-            color: var(--navy);
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.2px;
-        }
-
-        .promise-text p {
+        .insight p {
             font-size: 15px;
             color: var(--text-light);
             line-height: 1.7;
+            margin-bottom: 10px;
         }
 
-        .promise-box {
+        .insight p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ============ FLUXOS ============ */
+        .flow {
             background: white;
-            padding: 40px;
+            border: 2px solid var(--medium-gray);
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            border-left: 5px solid var(--gold);
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
         }
 
-        .promise-result {
-            background: linear-gradient(135deg, #faf8f5 0%, #f3f4f6 100%);
-            border-left: 5px solid var(--gold);
-            padding: 28px;
-            margin-top: 32px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(201, 168, 76, 0.1);
-        }
-
-        .promise-result p {
+        .flow-title {
             font-size: 16px;
+            font-weight: 700;
             color: var(--navy);
-            font-weight: 600;
-            line-height: 1.7;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .flow-item {
+            font-size: 15px;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .flow-arrow {
+            color: var(--gold);
+            font-weight: 700;
+            margin: 12px 0;
+            font-size: 20px;
+        }
+
+        /* ============ IMAGE BOX ============ */
+        .image-container {
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            font-size: 13px;
+            color: var(--text-lighter);
+            margin-top: 12px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* ============ AUTORIDADE ============ */
+        .authority-section {
+            background: var(--light-gray);
+            padding: 50px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .authority-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .authority-section p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .authority-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ============ SOLUÇÃO ============ */
+        .solution-box {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.05) 0%, rgba(201, 168, 76, 0.02) 100%);
+            padding: 50px 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .solution-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .solution-item {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .solution-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .solution-item h4 {
+            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-weight: 700;
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* SEÇÃO 5: CTA */
+        .solution-item p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ============ CTA FINAL ============ */
         .cta-section {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
             text-align: center;
-            padding: 70px 20px;
-            border-radius: 16px;
-            margin: 60px 20px;
+            margin: 60px 0;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(13, 15, 26, 0.2);
         }
 
         .cta-section::before {
@@ -342,21 +425,9 @@
             position: absolute;
             top: -50%;
             right: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 0;
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
             border-radius: 50%;
             z-index: 0;
         }
@@ -366,135 +437,48 @@
             z-index: 1;
         }
 
-        .cta-section h2 {
-            color: white;
-            border-bottom-color: var(--gold);
-        }
-
-        .cta-section h2::before {
-            background: var(--gold);
+        .cta-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
         }
 
         .cta-section p {
-            font-size: 17px;
-            margin-bottom: 25px;
+            font-size: 16px;
             color: #d1d5db;
             line-height: 1.8;
-            font-weight: 400;
+            margin-bottom: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-            color: var(--navy);
-            padding: 18px 50px;
-            border: none;
-            border-radius: 8px;
-            font-size: 17px;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.5px;
-            box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
-            text-transform: uppercase;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.4);
-        }
-
-        .cta-button:active {
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 480px) {
-            .cta-button {
-                width: 100%;
-                padding: 16px 30px;
-                font-size: 15px;
-            }
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--navy);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 13px;
-            color: #6b7280;
-            border-top: 1px solid rgba(201, 168, 76, 0.2);
-        }
-
-        /* DIVISOR COM GRADIENTE */
+        /* ============ DIVISOR ============ */
         .divider {
             height: 2px;
             background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-            margin: 50px 20px;
+            margin: 60px 20px;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* RESPONSIVIDADE */
-        @media (max-width: 480px) {
-            section {
-                padding: 40px 16px;
-            }
-
-            section h2 {
-                font-size: 24px;
-            }
-
-            section h2::before {
-                width: 3px;
-                height: 24px;
-            }
-
-            header h1 {
-                font-size: 32px;
-            }
-
-            header p {
-                font-size: 15px;
-            }
-
-            .erro-card {
-                padding: 20px;
-                margin-bottom: 16px;
-            }
-
-            .promise-box {
-                padding: 25px;
-            }
-
-            .cta-section {
-                padding: 50px 20px;
-                margin: 40px 0;
-                border-radius: 12px;
-            }
-
-            .promise-item {
-                gap: 16px;
-                margin-bottom: 24px;
-                padding-bottom: 24px;
-            }
-
-            .promise-number {
-                width: 44px;
-                height: 44px;
-                font-size: 18px;
-            }
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--light-gray);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-light);
         }
 
-        /* ANIMAÇÕES */
-        @keyframes fadeIn {
+        /* ============ ANIMAÇÕES ============ */
+        @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -502,174 +486,350 @@
             }
         }
 
-        section {
-            animation: fadeIn 0.6s ease-out;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
-        /* LINKS */
-        a {
-            color: var(--gold);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        a:hover {
-            color: var(--gold-light);
-            text-decoration: underline;
+        /* ============ RESPONSIVIDADE ============ */
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 20px;
+            }
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            header .hero-subtitle {
+                font-size: 16px;
+            }
+
+            header .hero-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            section h2::before {
+                height: 28px;
+            }
+
+            .opportunity {
+                padding: 30px;
+            }
+
+            .authority-section {
+                padding: 35px 25px;
+            }
+
+            .solution-box {
+                padding: 35px 25px;
+            }
+
+            .cta-section {
+                padding: 45px 25px;
+            }
+
+            .cta-section h3 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header .hero-subtitle {
+                font-size: 15px;
+            }
+
+            section h2 {
+                font-size: 22px;
+            }
+
+            section h2::before {
+                width: 3px;
+                height: 22px;
+                margin-right: 10px;
+            }
+
+            .opportunity {
+                padding: 24px;
+                margin-bottom: 20px;
+            }
+
+            .praise-box {
+                padding: 24px;
+            }
+
+            .cta-section {
+                padding: 35px 20px;
+            }
+
+            .cta-section h3 {
+                font-size: 22px;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 16px 30px;
+            }
+
+            .solution-item {
+                margin-bottom: 25px;
+                padding-bottom: 25px;
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- ============ HERO ============ -->
 <header>
-    <h1>Passo a passo para captar clientes</h1>
-    <p>Su, aqui está como você pode aparecer para mais pessoas e vender mais.</p>
+    <h1>Su, analisei sua presença digital.</h1>
+    <p class="hero-subtitle">Passei um tempo estudando seu trabalho e separei alguns pontos que podem fazer mais pessoas conhecerem sua fotografia.</p>
+    <div class="hero-meta">
+        <span>✓ Análise manual</span>
+        <span>⏱️ Leitura de ~4 minutos</span>
+    </div>
 </header>
 
 <div class="container">
 
-    <!-- SEÇÃO 1: ERROS -->
-    <section>
-        <h2>Os 5 erros que estão te custando clientes</h2>
-        <p class="section-subtitle">Fotógrafas incríveis como você deixam dinheiro na mesa. Vê se você se identifica:</p>
-
-        <div class="erro-card">
-            <h3>1. Ficha do Google não otimizada</h3>
-            <p>Sua ficha do Google é um recurso gratuito e poderoso. Se está incompleta ou desatualizada, você simplesmente não aparece nas buscas. Resultado: clientes procuram e não te encontram.</p>
-        </div>
-
-        <div class="erro-card">
-            <h3>2. Sem site de apresentação</h3>
-            <p>Instagram é seu portfólio, mas não é uma página de vendas. Um site próprio funciona 24 horas vendendo seu trabalho enquanto você dorme. Sem ele, você perde credibilidade e a chance de aparecer no Google.</p>
-        </div>
-
-        <div class="erro-card">
-            <h3>3. Não usa anúncios no Google</h3>
-            <p>É onde as pessoas buscam fotógrafo. Se você não está lá, seus concorrentes estão. Enquanto isso, você perde clientes já com intenção de compra.</p>
-        </div>
-
-        <div class="erro-card">
-            <h3>4. Não investe em anúncios no Facebook e Instagram</h3>
-            <p>É onde você mostra seu trabalho para mais pessoas e constrói reconhecimento de marca. Sem isso, só quem já conhece você te encontra.</p>
-        </div>
-
-        <div class="erro-card">
-            <h3>5. Atendimento comercial fraco</h3>
-            <p>Mesmo com cliente chegando, se o atendimento não converter, você perde a venda. Resposta lenta, falta de informação clara sobre preço e processo travam o negócio.</p>
+    <!-- ============ ELOGIO GENUÍNO ============ -->
+    <section class="intro-section">
+        <h2>Antes de qualquer coisa</h2>
+        
+        <div class="praise-box">
+            <p>Seu trabalho é realmente bonito, Su.</p>
+            <p>As imagens que você cria transmitem profissionalismo genuíno. Aquele tipo de fotografia que as pessoas reconhecem logo de primeira. Composição, luz, emoção. Tudo no lugar certo.</p>
+            <p>Seus clientes conseguem ver qualidade no que você faz. É óbvio. Basta olhar o portfólio.</p>
+            <p class="praise-highlight">Seu problema não é qualidade.<br>Seu problema é alcance.</p>
+            <p style="margin-top: 20px; font-size: 16px; color: var(--text-light);">E essa diferença muda absolutamente tudo.</p>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- SEÇÃO 2: ANÁLISE GOOGLE -->
+    <!-- ============ OPORTUNIDADES ============ -->
     <section>
-        <h2>O que encontramos na sua ficha do Google</h2>
-        <p class="section-subtitle">Situação clara: você não tem ficha registrada. E isso é um problema.</p>
+        <h2>Oportunidades que encontrei</h2>
+        <p class="section-intro-text">Não são erros. São pontos que podem estar limitando seu crescimento.</p>
 
-        <div class="analise-box">
-            <p class="insight-label">❌ Sua situação:</p>
-            <p><strong>Zero ficha no Google.</strong> Quando grávidas procuram "fotógrafo gestação" em São Luís, você não aparece.</p>
-            
-            <div style="background: #f9f4ec; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid var(--gold);">
-                <p><strong>Ruth Feitosa Fotografia:</strong> 132 avaliações, 5.0 ⭐</p>
-                <p><strong>Supeleto Fotografia:</strong> 33 avaliações, 5.0 ⭐</p>
-                <p style="margin-top: 10px; font-size: 14px; color: var(--text-light);">Seus concorrentes ganham enquanto você fica invisível.</p>
+        <!-- OPORTUNIDADE 1 -->
+        <div class="opportunity">
+            <span class="opp-label">📍 O que encontrei</span>
+            <h3 class="opp-title">Você não aparece no Google</h3>
+            <p class="opp-description">Não há Ficha do Google Business Profile registrada em seu nome. Daquele lugar onde aparecem as avaliações, o endereço, o horário de funcionamento. Sabe? Onde a maioria das pessoas procura.</p>
+
+            <div class="insight">
+                <span class="insight-title">Por que isso importa</span>
+                <p>Toda vez que alguém em São Luís digita "fotógrafo gestante" ou "fotografia profissional" no Google, ela está procurando por você. E o que ela encontra? Seus concorrentes. Com avaliações 5 estrelas. Com endereço. Com fotos.</p>
             </div>
 
-            <p class="insight-label" style="margin-top: 30px;">💡 Com uma ficha otimizada:</p>
-            <p>Grávidas em Barbacena, São Luís, Mocelin Tower digitam "fotógrafo gestante" e encontram você. Com fotos, endereço, horários, avaliações. Elas ligam direto.</p>
-            
-            <p style="margin-top: 15px; font-size: 14px; color: var(--text-light);">Recurso 100% gratuito. Ruth tem 132 avaliações de graça. Você poderia ter também.</p>
+            <div class="flow">
+                <div class="flow-title">Cenário Atual</div>
+                <div class="flow-item">Grávida pesquisa por "fotógrafo"</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Encontra concorrentes com avaliações</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Você fica invisível</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Ela agenda com outra pessoa</div>
+            </div>
+
+            <div class="insight">
+                <span class="insight-title">Como resolver</span>
+                <p>Criar e otimizar sua ficha no Google. Totalmente gratuito. Colocar fotos, descrição, avaliações. Ruth Feitosa tem 132 avaliações. Supeleto tem 33. Você poderia ter também, iniciando a partir de zero.</p>
+            </div>
+        </div>
+
+        <!-- OPORTUNIDADE 2 -->
+        <div class="opportunity">
+            <span class="opp-label">📱 O que encontrei</span>
+            <h3 class="opp-title">Seu Instagram não alcança todos que poderiam te contratar</h3>
+            <p class="opp-description">Você tem 18.3 mil seguidores. Muito bom mesmo. Seu conteúdo está bem organizado, os highlights são claros, a qualidade é profissional.</p>
+
+            <div class="insight">
+                <span class="insight-title">Por que isso acontece</span>
+                <p>O Instagram não entrega mais conteúdo organicamente para praticamente ninguém. Isso não é com você. É com o algoritmo. Seus posts chegam para uma fração dos seus seguidores. Muitas grávidas que poderiam contratar você nunca veem seu trabalho porque o Instagram decidiu que não veem.</p>
+            </div>
+
+            <div class="flow">
+                <div class="flow-title">Com Anúncios no Meta</div>
+                <div class="flow-item">Seus melhores ensaios chegam no story de grávidas reais</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Pessoas fora do seu círculo te descobrem</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Você constrói marca de verdade</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Agendamentos aumentam</div>
+            </div>
+
+            <div class="insight">
+                <span class="insight-title">Como resolver</span>
+                <p>Investir em anúncios no Meta (Facebook e Instagram). Seus melhores ensaios aparecem para quem realmente quer contratar fotógrafo. Enquanto você constrói presença organicamente, seus concorrentes já estão aparecendo para essas pessoas.</p>
+            </div>
+
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/print-ad-%40marcosejessfotografia-prospe%C3%A7ao-su-%40hortegal.png" alt="Exemplo de concorrente anunciando no Meta">
+                <p class="image-caption">Veja: @marcosejessfotografia já investe em anúncios para ampliar sua visibilidade</p>
+            </div>
+        </div>
+
+        <!-- OPORTUNIDADE 3 -->
+        <div class="opportunity">
+            <span class="opp-label">🌐 O que encontrei</span>
+            <h3 class="opp-title">Você não tem um site próprio</h3>
+            <p class="opp-description">Toda sua presença digital está concentrada no Instagram. É um ótimo portfólio, mas não é uma página de vendas. São coisas muito diferentes.</p>
+
+            <div class="insight">
+                <span class="insight-title">Por que isso importa</span>
+                <p>Um site funciona 24 horas vendendo seu trabalho enquanto você dorme. É um espaço profissional onde a pessoa que te encontrou conhece seu processo, seus diferenciais, e sabe exatamente como entrar em contato para agendar.</p>
+            </div>
+
+            <div class="flow">
+                <div class="flow-title">Fluxo que Funciona</div>
+                <div class="flow-item">Grávida descobre você (Google ou anúncio)</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Clica no link → seu site</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Vê portfólio + diferenciais + como contratar</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Entra em contato com você</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-item">Você agenda</div>
+            </div>
+
+            <div class="insight">
+                <span class="insight-title">Como resolver</span>
+                <p>Criar um site profissional que apresente seu trabalho e transforme visitantes em clientes. Um lugar onde a pessoa sente confiança ao conhecer sua marca.</p>
+            </div>
+        </div>
+
+        <!-- OPORTUNIDADE 4 -->
+        <div class="opportunity">
+            <span class="opp-label">🎯 O que encontrei</span>
+            <h3 class="opp-title">Você não está em Google Ads</h3>
+            <p class="opp-description">Enquanto você constrói presença organicamente, as grávidas que desejam contratar um fotógrafo profissional estão do outro lado procurando. E quem elas encontram? Quem está pagando para aparecer.</p>
+
+            <div class="insight">
+                <span class="insight-title">Por que isso importa</span>
+                <p>Quando alguém digita "fotógrafo gestante profissional" no Google, ela não está procurando fotos aleatórias. Ela quer contratar. Tem interesse. Tem intenção de compra. Google Ads é onde você encontra essa pessoa exatamente nesse momento.</p>
+            </div>
+
+            <div class="flow">
+                <div class="flow-title">Diferença Entre Canais</div>
+                <div class="flow-item">Instagram: Pessoas descobrem você acaso, sem intenção</div>
+                <div class="flow-arrow">vs</div>
+                <div class="flow-item">Google Ads: Pessoas procuram, têm intenção, estão prontas para contratar</div>
+            </div>
+
+            <div class="insight">
+                <span class="insight-title">Como resolver</span>
+                <p>Aparecer em Google Ads quando pessoas procuram exatamente pelo seu serviço. Você aparece antes dos concorrentes. No topo. Onde a intenção de compra é maior.</p>
+            </div>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- SEÇÃO 3: ANÁLISE META -->
+    <!-- ============ AUTORIDADE ============ -->
     <section>
-        <h2>Oportunidades no Facebook e Instagram</h2>
-        <p class="section-subtitle">Você tem 18.3k seguidores. Bom. Mas tem um problema.</p>
-
-        <div class="analise-box">
-            <p class="insight-label">✅ O que funciona:</p>
-            <p><strong>18.3 mil seguidores</strong> | <strong>Conteúdo organizado</strong> | <strong>Highlights claros</strong></p>
-
-            <p class="insight-label" style="margin-top: 25px;">❌ O problema:</p>
-            
-            <div style="background: #f9f4ec; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid var(--gold);">
-                <p><strong>18k seguidores, mas alcance fraco.</strong> Seus posts chegam pra uma fração. Grávidas que poderiam pagar R$ 1.500 em um ensaio nunca veem você.</p>
-            </div>
-
-            <p class="insight-label" style="margin-top: 25px;">📊 Seus concorrentes já anunciam:</p>
-            
-            <div class="screenshot-placeholder">
-                <img src="https://raw.githubusercontent.com/assessoriarasecmidias/lp-assets/refs/heads/main/print-ad-%40marcosejessfotografia-prospe%C3%A7ao-su-%40hortegal.png" alt="Print de anúncios ativos @marcosejessfotografia">
-            </div>
-
-            <p style="margin-top: 15px; font-size: 14px; color: var(--text-light);">@marcosejessfotografia está anunciando. Você constrói organicamente. Diferença enorme de resultado.</p>
-
-            <p class="insight-label" style="margin-top: 30px;">💡 Com anúncios no Meta:</p>
-            <p><strong>1.</strong> Seus ensaios chegam em stories de grávidas reais</p>
-            <p style="margin-top: 10px;"><strong>2.</strong> Pessoas fora do seu círculo descobrem você</p>
-            <p style="margin-top: 10px;"><strong>3.</strong> Você constrói marca de verdade</p>
+        <div class="authority-section">
+            <h3>Quem fez esta análise?</h3>
+            <p>Meu nome é Guilherme. Sou fundador da Raséc Mídias, uma assessoria especializada em ajudar empresas locais a aparecerem para pessoas com real intenção de compra.</p>
+            <p>Nosso trabalho é simples: conectar profissionais qualificados (como você) com quem realmente quer contratar. Através de Google Ads, Meta Ads, e otimização de presença digital.</p>
+            <p>Essa análise é baseada em dados reais. Sem achismo.</p>
         </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- SEÇÃO 4: PROMESSA -->
+    <!-- ============ SOLUÇÃO ============ -->
     <section>
-        <h2>Como a gente ajuda</h2>
-        <p class="section-subtitle">4 frentes. Resultado concreto.</p>
+        <h2>Como resolvemos cada um desses pontos</h2>
 
-        <div class="promise-box">
-            <div class="promise-item">
-                <div class="promise-number">1</div>
-                <div class="promise-text">
-                    <h3>Ficha no Google</h3>
-                    <p>Fotos, descrição, atributos. Pronto. Grávidas te encontram.</p>
-                </div>
+        <div class="solution-box">
+            <h3>Benefícios Concretos</h3>
+            
+            <div class="solution-item">
+                <h4>1. Ficha no Google Meu Negócio</h4>
+                <p>Quando alguém pesquisa por fotógrafo na sua região, você aparece. Com suas fotos, seus horários, suas avaliações. A pessoa vê que você é confiável e liga direto.</p>
             </div>
 
-            <div class="promise-item">
-                <div class="promise-number">2</div>
-                <div class="promise-text">
-                    <h3>Site que vende 24h</h3>
-                    <p>Portfolio + agendamento. Trabalhando enquanto você dorme.</p>
-                </div>
+            <div class="solution-item">
+                <h4>2. Site Profissional</h4>
+                <p>Um espaço que apresenta seu trabalho em profundidade. Onde a pessoa conhece seu processo, seus diferenciais, e sabe exatamente como agendar com você.</p>
             </div>
 
-            <div class="promise-item">
-                <div class="promise-number">3</div>
-                <div class="promise-text">
-                    <h3>Google Ads</h3>
-                    <p>Você aparece quando buscam. Clientes prontos para pagar.</p>
-                </div>
+            <div class="solution-item">
+                <h4>3. Google Ads</h4>
+                <p>Enquanto alguém procura exatamente pelo serviço que você oferece, sua empresa aparece antes dos concorrentes. Você captura o cliente quando a intenção de compra é maior.</p>
             </div>
 
-            <div class="promise-item">
-                <div class="promise-number">4</div>
-                <div class="promise-text">
-                    <h3>Anúncios no Meta</h3>
-                    <p>Apareça em stories. Construa marca. Mais agendamentos.</p>
-                </div>
-            </div>
-
-            <div class="promise-result">
-                <p><strong>Resultado:</strong> Você vira a opção que grávidas encontram quando procuram. Agendamentos chegam.</p>
+            <div class="solution-item">
+                <h4>4. Anúncios no Meta</h4>
+                <p>Seus melhores ensaios chegam para grávidas que poderiam contratar você. Pessoas que não são seguidores, que não conhecem seu trabalho. Você constrói marca enquanto cativa clientes.</p>
             </div>
         </div>
     </section>
 
     <div class="divider"></div>
 
-
+    <!-- ============ CTA FINAL ============ -->
+    <section>
+        <div class="cta-section">
+            <h3>Aqui está o detalhe importante</h3>
+            <p>Essa análise que você acabou de ler é apenas um resumo do que enxergamos no seu negócio.</p>
+            <p>Existem outras oportunidades específicas que poderiam ser aplicadas imediatamente no seu trabalho.</p>
+            <p style="margin-top: 25px; font-weight: 600;">Se tudo isso faz sentido para você, podemos marcar uma conversa.</p>
+            <p style="font-size: 15px;">Aproximadamente 20 minutos. Nela vou mostrar exatamente como isso funcionaria para seu negócio. Os detalhes. O passo a passo. Como começar.</p>
+            <p style="font-size: 15px; margin-top: 20px; color: #d1d5db;">Sem nenhum compromisso. Só clareza.</p>
+        </div>
+    </section>
 
 </div>
 
+<!-- ============ FOOTER ============ -->
 <footer>
-    <p>Assessoria Raséc Mídias | Captação de Clientes por Meio de Anúncios</p>
+    <p>© Raséc Mídias | Assessoria de Captação de Clientes por Meio de Anúncios</p>
 </footer>
+
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
